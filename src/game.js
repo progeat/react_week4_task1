@@ -8,5 +8,22 @@ export const Game = () => {
 	const [isDraw, setIsDraw] = useState(false);
 	const [field, setField] = useState(FIELD_PARAM);
 
-	return <GameLayout field={field} setField={setField} />;
+	const onClickReset = () => {
+		setCurrentPlayer('X');
+		setIsGameEnded(false);
+		setIsDraw(false);
+		setField(FIELD_PARAM);
+	};
+
+	return (
+		<GameLayout
+			currentPlayer={currentPlayer}
+			setCurrentPlayer={setCurrentPlayer}
+			isGameEnded={isGameEnded}
+			setIsGameEnded={setIsGameEnded}
+			field={field}
+			setField={setField}
+			onClickReset={onClickReset}
+		/>
+	);
 };

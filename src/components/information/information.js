@@ -1,7 +1,9 @@
-import { InformationLayout } from './information-layout'
+import { InformationLayout } from './information-layout.js';
 
-export const Information = () => {
+export const Information = ({ currentPlayer, isGameEnded }) => {
 	return (
-		<InformationLayout />
-	)
-}
+		<>
+			<InformationLayout currentPlayer={currentPlayer} isGameEnded={isGameEnded} />
+		</>
+	);
+};

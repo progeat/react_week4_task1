@@ -1,3 +1,7 @@
 .game {
 	text-align: center;
 }
+
+.button-reset {
+	background-color: aquamarine;
+}
