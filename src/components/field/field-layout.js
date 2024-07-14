@@ -1,15 +1,11 @@
+import PropTypes from 'prop-types';
 import styles from './field.module.css';
 
-export const FieldLayout = ({ field, onClickButton }) => (
-	<div className={styles.field}>
-		{field.map((elem, index) => (
-			<button
-				className={styles.button}
-				key={index}
-				onClick={() => onClickButton(index)}
-			>
-				{elem}
-			</button>
-		))}
-	</div>
+export const FieldLayout = ({ children }) => (
+	<div className={styles.field}>{children}</div>
 );
+
+FieldLayout.propTypes = {
+	field: PropTypes.array,
+	onClickButton: PropTypes.func,
+};
