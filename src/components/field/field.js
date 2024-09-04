@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { FieldLayout } from './field-layout';
+import { WIN_PATTERNS } from '../../constants';
 import styles from './field.module.css';
 
 export const Field = ({
@@ -9,7 +10,6 @@ export const Field = ({
 	setCurrentPlayer,
 	isGameEnded,
 	setIsGameEnded,
-	winPatterns,
 }) => {
 	const onClickButton = (cellIndex) => {
 		if (field[cellIndex] === '' && !isGameEnded) {
@@ -17,7 +17,7 @@ export const Field = ({
 				cellIndex === index ? currentPlayer : elem,
 			);
 
-			const isWinner = winPatterns.some((pattern) =>
+			const isWinner = WIN_PATTERNS.some((pattern) =>
 				pattern.every(
 					(indexPattern) => updateField[indexPattern] === currentPlayer,
 				),
@@ -53,5 +53,4 @@ Field.propTypes = {
 	setCurrentPlayer: PropTypes.func,
 	isGameEnded: PropTypes.bool,
 	setIsGameEnded: PropTypes.func,
-	winPatterns: PropTypes.array,
 };

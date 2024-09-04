@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { GameLayout } from './game-layout';
-import { FIELD_PARAM, WIN_PATTERNS } from './constants';
+import { FIELD_PARAM } from './constants';
 
 export const Game = () => {
 	const [currentPlayer, setCurrentPlayer] = useState('X');
 	const [isGameEnded, setIsGameEnded] = useState(false);
 	const [isDraw, setIsDraw] = useState(false);
 	const [field, setField] = useState(FIELD_PARAM);
-	const winPatterns = WIN_PATTERNS;
 
 	const isFullCells = field.every((cell) => cell !== '');
 
@@ -29,7 +28,6 @@ export const Game = () => {
 			isDraw={isDraw}
 			field={field}
 			setField={setField}
-			winPatterns={winPatterns}
 			onClickReset={onClickReset}
 		/>
 	);

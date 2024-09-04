@@ -10,7 +10,6 @@ export const GameLayout = ({
 	isDraw,
 	isGameEnded,
 	setIsGameEnded,
-	winPatterns,
 	onClickReset,
 }) => {
 	return (
@@ -27,7 +26,6 @@ export const GameLayout = ({
 				setIsGameEnded={setIsGameEnded}
 				field={field}
 				setField={setField}
-				winPatterns={winPatterns}
 			/>
 			<button className={styles['button-reset']} onClick={onClickReset}>
 				Начать заново
@@ -44,6 +42,5 @@ GameLayout.propTypes = {
 	isDraw: PropTypes.bool,
 	isGameEnded: PropTypes.bool,
 	setIsGameEnded: PropTypes.func,
-	winPatterns: PropTypes.array,
 	onClickReset: PropTypes.func,
 };
